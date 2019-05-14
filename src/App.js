@@ -24,7 +24,7 @@ class App extends Component {
       <BrowserRouter>
         <GlobalStyle />
         {/* <Home /> */}
-        <Route path="/home" component={Home} />
+        <Route exact path="/" component={Home} />
         <Route path="/game" component={Game} />
       </BrowserRouter>
     );
