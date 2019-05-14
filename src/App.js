@@ -3,7 +3,7 @@ import Home from "./sites/Home";
 import styled, { createGlobalStyle } from "styled-components";
 import { BrowserRouter, Route } from "react-router-dom";
 
-import Game from "./components/Game";
+import Game from "./sites/Game";
 
 const GlobalStyle = createGlobalStyle`
  @import url('https://fonts.googleapis.com/css?family=Montserrat|Roboto');

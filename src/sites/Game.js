@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Board from "./Board";
+import Board from "../components/Board";
 import StyledWrapper from "../styledComponents/StyledWrapper";
 import H1 from "../styledComponents/H1";
 const Game = () => {
