@@ -1,10 +1,11 @@
 import React from "react";
+import StyledSquare from "../styledComponents/StyledSquare";
 
 function Square(props) {
   return (
-    <button className="square" onClick={props.onClick}>
+    <StyledSquare leftBd topBd className="square" onClick={props.onClick}>
       {props.value}
-    </button>
+    </StyledSquare>
   );
 }
 
