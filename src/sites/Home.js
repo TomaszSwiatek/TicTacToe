@@ -1,14 +1,16 @@
 import React from "react";
 import H1 from "../styledComponents/H1";
 import { Link } from "react-router-dom";
+import StyledLink from "../styledComponents/StyledLink";
+import StyledWrapper from "../styledComponents/StyledWrapper";
 
 const Home = () => {
   return (
-    <div>
-      <H1>Tic Tac Toe Game</H1>
+    <StyledWrapper>
+      <H1 isBig>Tic Tac Toe Game</H1>
 
-      <Link to="/game">Let's play</Link>
-    </div>
+      <StyledLink to="/game">Let's play</StyledLink>
+    </StyledWrapper>
   );
 };
 

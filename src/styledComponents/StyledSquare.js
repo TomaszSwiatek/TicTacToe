@@ -5,11 +5,17 @@ const StyledSquare = styled.button`
   /* padding: 2rem 2rem; */
   width: 2rem;
   height: 2rem;
-  margin: 0;
+  margin: 0.1rem;
   padding: 0;
+  border-radius: 5px;
   background: #fff;
-  border-style: solid;
-  border-color: black;
+  border: none;
+  transition: background 0.4s ease;
+
+  :hover {
+    background: #39bae8;
+    color: white;
+  }
 
   /* zrobic tak ze bdLeft - i wtedy ma border left */
 `;

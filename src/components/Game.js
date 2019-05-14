@@ -5,8 +5,8 @@ import H1 from "../styledComponents/H1";
 const Game = () => {
   return (
     <StyledWrapper>
-      <H1 isBig>Tic Tac Toe</H1>
-      <H1 isSecondary>Play the game</H1>
+      {/* <H1 isBig>Tic Tac Toe</H1> */}
+      {/* <H1 isSecondary>Play the game</H1> */}
       <Board />
     </StyledWrapper>
   );

@@ -12,8 +12,7 @@ const GlobalStyle = createGlobalStyle`
   padding: 0;
   margin: 0;
   color:white;
-  font-family: 'Roboto';
-  background-image: url("./assets/background.jpg");
+  font-family: 'Montserrat';
 
 }
 `;

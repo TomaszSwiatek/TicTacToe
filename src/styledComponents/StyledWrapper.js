@@ -8,9 +8,9 @@ const StyledWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* background: pink; */
+  background: #121a20;
   font-family: "Roboto";
-  background-image: url(${img});
+  /* background-image: url(${img}); */
   background-position: center;
   background-size: cover;
 `;

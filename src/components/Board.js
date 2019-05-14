@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Square from "./Square";
-import StyledButton from "../styledComponents/Button.js";
-
+import StyledButton from "../styledComponents/StyledButton.js";
+import StyledStatus from "../styledComponents/StyledStatus.js";
 //main board class
 class Board extends Component {
   constructor(props) {
@@ -88,8 +88,7 @@ class Board extends Component {
     return (
       <div>
         <StyledButton onClick={this.handlePlayAgain}>Play again</StyledButton>
-        <div className="status">{endStatus}</div>
-        <div className="status">{status}</div>
+        <StyledStatus>{status}</StyledStatus>
         <div className="board-row">
           {this.drawSquare(0)}
           {this.drawSquare(1)}
