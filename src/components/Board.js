@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Square from "./Square";
-import styled from "styled-components";
+import StyledButton from "../styledComponents/Button.js";
 
 //main board class
 class Board extends Component {
@@ -87,7 +87,7 @@ class Board extends Component {
 
     return (
       <div>
-        <button onClick={this.handlePlayAgain}>Play again</button>
+        <StyledButton onClick={this.handlePlayAgain}>Play again</StyledButton>
         <div className="status">{endStatus}</div>
         <div className="status">{status}</div>
         <div className="board-row">

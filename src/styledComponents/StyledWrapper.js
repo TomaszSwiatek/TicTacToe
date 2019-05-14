@@ -1,7 +1,5 @@
-import React, { Component } from "react";
-import Board from "./Board";
 import styled from "styled-components";
-
+import img from "../assets/background.jpg";
 //styled-components to game:
 const StyledWrapper = styled.div`
   display: flex;
@@ -12,16 +10,9 @@ const StyledWrapper = styled.div`
   align-items: center;
   /* background: pink; */
   font-family: "Roboto";
-  background-image: url("./assets/background.jpg");
+  background-image: url(${img});
+  background-position: center;
+  background-size: cover;
 `;
 
-const Game = () => {
-  return (
-    <StyledWrapper>
-      <h1>Hi people</h1>
-      <Board />
-    </StyledWrapper>
-  );
-};
-
-export default Game;
+export default StyledWrapper;
