@@ -4,11 +4,11 @@ const StyledStatus = styled.div`
   width: 30%;
   text-align: center;
   text-decoration: none;
-  color: white;
-  background: ${({ theme }) => theme.colors.secondary};
+  color: ${({ theme }) => theme.colors.white};
+  border: 1px solid ${({ theme }) => theme.colors.secondary};
+  background: ${({ theme }) => theme.colors.primary};
   padding: 0.5rem 2rem;
   border-radius: 5px;
-  border: none;
   font-size: 0.5rem;
   font-weight: 700;
 `;

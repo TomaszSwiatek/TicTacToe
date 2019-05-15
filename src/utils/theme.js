@@ -9,6 +9,14 @@ export const theme = {
     thin: 300,
     regular: 400,
     bold: 700
+  },
+  media: {
+    //   mobile: '@media (min-width: 320px)',
+    tablet: "@media (min-width: 728px)",
+    desktop: "@media (min-width: 1024px)"
+    //   then in each components - best at the end we add media queries such a further: ${({theme}) => theme.media.desktop} {
+    //rules
+    // }
   }
 };
 
