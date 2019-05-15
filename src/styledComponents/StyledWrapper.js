@@ -1,6 +1,5 @@
 import styled from "styled-components";
-import img from "../assets/background.jpg";
-//styled-components to game:
+
 const StyledWrapper = styled.div`
   display: flex;
   height: 100vh;
@@ -8,9 +7,9 @@ const StyledWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #121a20;
+  background: ${({ theme }) => theme.colors.primary};
   font-family: "Roboto";
-  /* background-image: url(${img}); */
+
   background-position: center;
   background-size: cover;
 `;

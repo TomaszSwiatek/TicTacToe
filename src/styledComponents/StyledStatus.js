@@ -5,7 +5,7 @@ const StyledStatus = styled.div`
   text-align: center;
   text-decoration: none;
   color: white;
-  background: #39bae8;
+  background: ${({ theme }) => theme.colors.secondary};
   padding: 0.5rem 2rem;
   border-radius: 5px;
   border: none;

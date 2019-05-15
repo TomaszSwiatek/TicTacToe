@@ -8,13 +8,13 @@ const StyledSquare = styled.button`
   margin: 0.1rem;
   padding: 0;
   border-radius: 5px;
-  background: #fff;
+  background: ${({ theme }) => theme.colors.white};
   border: none;
   transition: background 0.4s ease;
 
   :hover {
-    background: #39bae8;
-    color: white;
+    background: ${({ theme }) => theme.colors.secondary};
+    color: ${({ theme }) => theme.colors.white};
   }
 
   /* zrobic tak ze bdLeft - i wtedy ma border left */
