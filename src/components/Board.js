@@ -73,7 +73,7 @@ class Board extends Component {
     if (winner) {
       status = "Winner: " + winner;
       if (winner === "X") {
-        this.setState({ xWon: this.state.xWon + this.state.counter });
+        // this.setState( prevState => ({xWon: prevState.xWon++});
         console.log("this time won:" + winner);
       } else if (winner === "O") {
         // this.state.oWon++;
