@@ -26,7 +26,7 @@ class Game extends Component {
   render() {
     return (
       <Layout>
-        <button onClick={this.toggleAnimation}>Animate</button>
+        {/* <button onClick={this.toggleAnimation}>Animate</button> */}
 
         {/* <PosedH1
           onLoad={this.toggleAnimation}
@@ -35,6 +35,7 @@ class Game extends Component {
         </PosedH1> */}
         {/* <H1 isBig>Tic Tac Toe</H1> */}
         {/* <H1 isSecondary>Play the game</H1> */}
+        {/* <StyledBoard /> */}
         <Board />
       </Layout>
     );

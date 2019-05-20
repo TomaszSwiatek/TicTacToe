@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import Square from "./Square";
 import StyledButton from "../styledComponents/StyledButton.js";
 import StyledStatus from "../styledComponents/StyledStatus.js";
+
+import Squares from "./Squares";
 //main board class
 class Board extends Component {
   constructor(props) {
@@ -11,7 +13,8 @@ class Board extends Component {
       xIsNext: true,
       xWon: 0,
       oWon: 0,
-      counter: 1
+      status: "",
+      endStatus: ""
     };
   }
 
@@ -25,6 +28,24 @@ class Board extends Component {
       squares: squares,
       xIsNext: !this.state.xIsNext //if true the fill square with X
     });
+
+    const winner = this.calculateWinner(this.state.squares);
+
+    if (winner) {
+      this.state.status = "Winner: " + winner;
+      if (winner === "X") {
+        this.updateScore(this.state.xWon);
+        // this.setState( prevState => ({xWon: prevState.xWon++});
+        console.log("this time won:" + winner);
+      } else if (winner === "O") {
+        this.updateScore(this.state.oWon);
+        console.log("this time won:" + winner);
+      } else {
+        this.state.endStatus = "Draw. start the game again.";
+      }
+    } else {
+      this.state.status = "Next player: " + (this.state.xIsNext ? "X" : "O");
+    }
   }
 
   drawSquare(value) {
@@ -36,6 +57,9 @@ class Board extends Component {
         }}
       />
     );
+  }
+  updateScore(player) {
+    this.setState({ player: this.state.player + 1 });
   }
   calculateWinner(squares) {
     const lines = [
@@ -66,29 +90,11 @@ class Board extends Component {
     });
   };
   render() {
-    const winner = this.calculateWinner(this.state.squares);
-    let status;
-    let endStatus;
-
-    if (winner) {
-      status = "Winner: " + winner;
-      if (winner === "X") {
-        // this.setState( prevState => ({xWon: prevState.xWon++});
-        console.log("this time won:" + winner);
-      } else if (winner === "O") {
-        // this.state.oWon++;
-        console.log("this time won:" + winner);
-      } else {
-        endStatus = "Draw. start the game again.";
-      }
-    } else {
-      status = "Next player: " + (this.state.xIsNext ? "X" : "O");
-    }
-
     return (
       <div>
         <StyledButton onClick={this.handlePlayAgain}>Play again</StyledButton>
-        <StyledStatus>{status}</StyledStatus>
+        {/* <StyledStatus>{status}</StyledStatus> */}
+
         <div className="board-row">
           {this.drawSquare(0)}
           {this.drawSquare(1)}
@@ -104,6 +110,12 @@ class Board extends Component {
           {this.drawSquare(7)}
           {this.drawSquare(8)}
         </div>
+        {/* <Squares
+          squares={this.state.squares[value]}
+          onClick={() => {
+            this.handleClick(value);
+          }}
+        /> */}
       </div>
     );
   }

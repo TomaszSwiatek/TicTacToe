@@ -16,8 +16,6 @@ const StyledSquare = styled.button`
     background: ${({ theme }) => theme.colors.secondary};
     color: ${({ theme }) => theme.colors.white};
   }
-
-  /* zrobic tak ze bdLeft - i wtedy ma border left */
 `;
 
 export default StyledSquare;
