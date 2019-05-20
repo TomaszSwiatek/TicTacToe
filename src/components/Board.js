@@ -2,8 +2,17 @@ import React, { Component } from "react";
 import Square from "./Square";
 import StyledButton from "../styledComponents/StyledButton.js";
 import StyledStatus from "../styledComponents/StyledStatus.js";
+import styled from "styled-components";
 
-import Squares from "./Squares";
+// import Squares from "./Squares";
+
+const StyledBoard = styled.div`
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: #2196f3;
+  padding: 10px;
+`;
+
 //main board class
 class Board extends Component {
   constructor(props) {
@@ -28,36 +37,8 @@ class Board extends Component {
       squares: squares,
       xIsNext: !this.state.xIsNext //if true the fill square with X
     });
-
-    const winner = this.calculateWinner(this.state.squares);
-
-    if (winner) {
-      this.state.status = "Winner: " + winner;
-      if (winner === "X") {
-        this.updateScore(this.state.xWon);
-        // this.setState( prevState => ({xWon: prevState.xWon++});
-        console.log("this time won:" + winner);
-      } else if (winner === "O") {
-        this.updateScore(this.state.oWon);
-        console.log("this time won:" + winner);
-      } else {
-        this.state.endStatus = "Draw. start the game again.";
-      }
-    } else {
-      this.state.status = "Next player: " + (this.state.xIsNext ? "X" : "O");
-    }
   }
 
-  drawSquare(value) {
-    return (
-      <Square
-        value={this.state.squares[value]}
-        onClick={() => {
-          this.handleClick(value);
-        }}
-      />
-    );
-  }
   updateScore(player) {
     this.setState({ player: this.state.player + 1 });
   }
@@ -90,32 +71,42 @@ class Board extends Component {
     });
   };
   render() {
+    const winner = this.calculateWinner(this.state.squares);
+
+    if (winner) {
+      this.state.status = "Winner: " + winner;
+      if (winner === "X") {
+        // this.updateScore(this.state.xWon);
+        // this.setState( prevState => ({xWon: prevState.xWon++});
+        console.log("this time won:" + winner);
+      } else if (winner === "O") {
+        // this.updateScore(this.state.oWon);
+        console.log("this time won:" + winner);
+      } else {
+        this.state.endStatus = "Draw. start the game again.";
+      }
+    } else {
+      this.state.status = "Next player: " + (this.state.xIsNext ? "X" : "O");
+    }
+
+    // squares start
+    const squares = this.state.squares;
+    const squareList = squares.map((square, index) => (
+      <Square
+        key={index}
+        value={square}
+        onClick={() => {
+          this.handleClick(index);
+        }}
+      />
+    ));
+    // squares end
+
     return (
       <div>
         <StyledButton onClick={this.handlePlayAgain}>Play again</StyledButton>
         {/* <StyledStatus>{status}</StyledStatus> */}
-
-        <div className="board-row">
-          {this.drawSquare(0)}
-          {this.drawSquare(1)}
-          {this.drawSquare(2)}
-        </div>
-        <div className="board-row">
-          {this.drawSquare(3)}
-          {this.drawSquare(4)}
-          {this.drawSquare(5)}
-        </div>
-        <div className="board-row">
-          {this.drawSquare(6)}
-          {this.drawSquare(7)}
-          {this.drawSquare(8)}
-        </div>
-        {/* <Squares
-          squares={this.state.squares[value]}
-          onClick={() => {
-            this.handleClick(value);
-          }}
-        /> */}
+        <StyledBoard className="square-list">{squareList}</StyledBoard>
       </div>
     );
   }
