@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import React from "react";
 const StyledStatus = styled.div`
   width: 30%;
   text-align: center;
@@ -13,4 +13,8 @@ const StyledStatus = styled.div`
   font-weight: 700;
 `;
 
-export default StyledStatus;
+const Status = props => {
+  return <StyledStatus>{props.status}</StyledStatus>;
+};
+
+export default Status;

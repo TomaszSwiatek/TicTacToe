@@ -1,10 +1,8 @@
 import React, { Component } from "react";
 import Square from "./Square";
 import StyledButton from "../styledComponents/StyledButton.js";
-import StyledStatus from "../styledComponents/StyledStatus.js";
+import Status from "./Status";
 import styled from "styled-components";
-
-// import Squares from "./Squares";
 
 const StyledBoard = styled.div`
   display: grid;
@@ -105,7 +103,7 @@ class Board extends Component {
     return (
       <div>
         <StyledButton onClick={this.handlePlayAgain}>Play again</StyledButton>
-        {/* <StyledStatus>{status}</StyledStatus> */}
+        <Status status={this.state.status} />
         <StyledBoard className="square-list">{squareList}</StyledBoard>
       </div>
     );
