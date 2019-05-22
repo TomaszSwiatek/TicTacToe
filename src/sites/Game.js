@@ -6,7 +6,6 @@ import styled from "styled-components";
 
 import Layout from "../styledComponents/Layout";
 import Logo from "../styledComponents/Logo";
-import H1 from "../styledComponents/H1";
 import posed from "react-pose";
 
 const BoardWrapper = styled.div`
@@ -16,14 +15,14 @@ const BoardWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 2rem;
 `;
 
 const StyledBoard = styled.div`
-  margin-right: 1rem;
   display: grid;
-  grid-template-columns: 1rem 1rem 1rem;
-  grid-template-rows: 1rem 1rem 1rem;
-  grid-gap: 1.5rem;
+  grid-template-columns: 3rem 3rem 3rem;
+  grid-template-rows: 3rem 3rem 3rem;
+  grid-gap: 1rem;
 `;
 
 // instead strings we put object into function:

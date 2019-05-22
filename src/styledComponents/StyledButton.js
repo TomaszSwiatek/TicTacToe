@@ -7,7 +7,7 @@ const StyledButton = styled.button`
   padding: 0.5rem 2rem;
   border-radius: 5px;
   border: none;
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 700;
   transition: box-shadow 0.3s ease;
 

@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Home from "./sites/Home";
-import styled from "styled-components";
 import { BrowserRouter, Route } from "react-router-dom";
 
 import Game from "./sites/Game";

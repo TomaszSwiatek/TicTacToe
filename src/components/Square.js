@@ -4,8 +4,8 @@ import styled from "styled-components";
 const StyledSquare = styled.button`
   box-sizing: border-box;
   /* padding: 2rem 2rem; */
-  width: 2rem;
-  height: 2rem;
+  width: 3rem;
+  height: 3rem;
   padding: 0;
   border-radius: 5px;
   background: ${({ theme }) => theme.colors.white};
@@ -13,6 +13,7 @@ const StyledSquare = styled.button`
   transition: background 0.4s ease;
   font-weight: 900;
   color: ${({ theme }) => theme.colors.neutral};
+  font-size: 1.3em;
 
   :hover {
     background: ${({ theme }) => theme.colors.secondary};
