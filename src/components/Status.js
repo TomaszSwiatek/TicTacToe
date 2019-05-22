@@ -9,7 +9,7 @@ const StyledStatus = styled.div`
   background: ${({ theme }) => theme.colors.primary};
   padding: 0.5rem 2rem;
   border-radius: 5px;
-  font-size: 0.5rem;
+  font-size: 1rem;
   font-weight: 700;
 `;
 
