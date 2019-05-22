@@ -6,7 +6,6 @@ const StyledSquare = styled.button`
   /* padding: 2rem 2rem; */
   width: 2rem;
   height: 2rem;
-  margin: 0;
   padding: 0;
   border-radius: 5px;
   background: ${({ theme }) => theme.colors.white};

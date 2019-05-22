@@ -5,6 +5,7 @@ import Status from "../components/Status";
 import styled from "styled-components";
 
 import Layout from "../styledComponents/Layout";
+import Logo from "../styledComponents/Logo";
 import H1 from "../styledComponents/H1";
 import posed from "react-pose";
 
@@ -18,6 +19,7 @@ const BoardWrapper = styled.div`
 `;
 
 const StyledBoard = styled.div`
+  margin-right: 1rem;
   display: grid;
   grid-template-columns: 1rem 1rem 1rem;
   grid-template-rows: 1rem 1rem 1rem;
@@ -133,9 +135,10 @@ class Board extends Component {
         >
           Mi PosedH1 header
         </PosedH1> */}
+        <Logo />
         <Status status={this.state.status} />
         <BoardWrapper>
-          <StyledBoard className="square-list">{squareList}</StyledBoard>
+          <StyledBoard>{squareList}</StyledBoard>
         </BoardWrapper>
         <StyledButton onClick={this.handlePlayAgain}>Play again</StyledButton>
       </Layout>
