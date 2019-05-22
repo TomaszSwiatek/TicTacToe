@@ -6,12 +6,14 @@ const StyledSquare = styled.button`
   /* padding: 2rem 2rem; */
   width: 2rem;
   height: 2rem;
-  margin: 0.1rem;
+  margin: 0;
   padding: 0;
   border-radius: 5px;
   background: ${({ theme }) => theme.colors.white};
   border: none;
   transition: background 0.4s ease;
+  font-weight: 900;
+  color: ${({ theme }) => theme.colors.neutral};
 
   :hover {
     background: ${({ theme }) => theme.colors.secondary};

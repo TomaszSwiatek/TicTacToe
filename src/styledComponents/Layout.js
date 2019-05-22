@@ -18,13 +18,10 @@ const StyledWrapper = styled.div`
   height: 100vh;
   width: 100vw;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   background: ${({ theme }) => theme.colors.primary};
   font-family: "Roboto";
-
-  background-position: center;
-  background-size: cover;
 `;
 
 const Layout = ({ children }) => (

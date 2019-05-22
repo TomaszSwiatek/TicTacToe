@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import React from "react";
 const StyledStatus = styled.div`
-  width: 30%;
+  /* width: 30%; */
   text-align: center;
   text-decoration: none;
   color: ${({ theme }) => theme.colors.white};

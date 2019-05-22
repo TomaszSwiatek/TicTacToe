@@ -9,7 +9,6 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        {/* <Home /> */}
         <Route exact path="/" component={Home} />
         <Route path="/game" component={Game} />
       </BrowserRouter>
