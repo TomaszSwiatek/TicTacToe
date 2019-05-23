@@ -47,7 +47,6 @@ class Board extends Component {
       xWon: 0,
       oWon: 0,
       status: "",
-      endStatus: "",
       visibleAnimation: false
     };
   }
@@ -64,12 +63,10 @@ class Board extends Component {
       squares: squares,
       xIsNext: !this.state.xIsNext //if true the fill square with X
     });
+
     //_______________________
   }
 
-  updateScore(player) {
-    this.setState({ player: this.state.player + 1 });
-  }
   calculateWinner(squares) {
     const lines = [
       [0, 1, 2],
@@ -98,18 +95,18 @@ class Board extends Component {
       squares: Array(9).fill(null)
     });
   };
+
+  componentDidMount() {}
+  componentDidUpdate() {}
+
   render() {
     const winner = this.calculateWinner(this.state.squares);
 
     if (winner) {
-      // this.setState({
-      //   status: `Winner: ${winner} `
-      // });
+      winner === "X" ? this.state.xWon++ : this.state.oWon++;
       this.state.status = "Winner: " + winner;
+      console.log(this.state.xWon, this.state.oWon);
     } else {
-      // this.setState({
-      //   status: `Next player: ${this.state.xIsNext ? "X" : "O"} `
-      // });
       this.state.status = "Next player: " + (this.state.xIsNext ? "X" : "O");
     }
     // squares start
