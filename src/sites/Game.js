@@ -7,7 +7,7 @@ import styled from "styled-components";
 import Layout from "../styledComponents/Layout";
 import Logo from "../styledComponents/Logo";
 import posed from "react-pose";
-import Box from "../styledComponents/Box";
+import PosedLogo from "../styledComponents/PosedLogo";
 
 const BoardWrapper = styled.div`
   width: 100vw;
@@ -26,19 +26,6 @@ const StyledBoard = styled.div`
   grid-gap: 1rem;
 `;
 
-// instead strings we put object into function:
-const PosedH1 = posed.h1({
-  visibleAnimation: {
-    x: 0,
-    opacity: 1
-  },
-  hidden: {
-    x: "-150%",
-    opacity: 0
-  }
-});
-
-//main board class
 class Board extends Component {
   constructor(props) {
     super(props);
@@ -48,15 +35,14 @@ class Board extends Component {
       xWon: 0,
       oWon: 0,
       status: "",
-      visibleAnimation: false,
-      pose: "top"
+      pose: "firstState"
     };
   }
 
   componentDidMount() {
     setTimeout(() => {
       this.setState({
-        pose: this.state.pose === "top" ? "bottom" : "top"
+        pose: this.state.pose === "firstState" ? "secondState" : "firstState"
       });
     }, 1000);
   }
@@ -131,14 +117,7 @@ class Board extends Component {
 
     return (
       <Layout>
-        {/* <button onClick={this.toggleAnimation}>Animate</button> */}
-
-        {/* <PosedH1
-          onLoad={this.toggleAnimation}
-        >
-          Mi PosedH1 header
-        </PosedH1> */}
-        <Box pose={this.state.pose} />
+        <PosedLogo pose={this.state.pose} />
         {/* <Logo /> */}
         <Status status={this.state.status} />
         <BoardWrapper>

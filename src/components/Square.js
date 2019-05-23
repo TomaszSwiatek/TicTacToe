@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import posed from "react-pose";
 
 const StyledSquare = styled.button`
   box-sizing: border-box;
