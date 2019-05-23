@@ -5,7 +5,6 @@ import Status from "../components/Status";
 import styled from "styled-components";
 
 import Layout from "../styledComponents/Layout";
-import Logo from "../styledComponents/Logo";
 import posed from "react-pose";
 import PosedLogo from "../styledComponents/PosedLogo";
 
@@ -106,6 +105,7 @@ class Board extends Component {
     const squares = this.state.squares;
     const squareList = squares.map((square, index) => (
       <Square
+        pose={this.state.pose}
         key={index}
         value={square}
         onClick={() => {

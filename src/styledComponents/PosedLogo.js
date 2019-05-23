@@ -4,7 +4,7 @@ import img from "../assets/logo.svg";
 
 const PosedLogo = styled(
   posed.div({
-    firstState: { scale: 0.5, opacity: 0.2, rotate: 0 },
+    firstState: { scale: 0.5, opacity: 0.01, rotate: 0 },
     secondState: { scale: 1, opacity: 1, rotate: 7 }
   })
 )`

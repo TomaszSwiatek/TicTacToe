@@ -2,7 +2,12 @@ import React from "react";
 import styled from "styled-components";
 import posed from "react-pose";
 
-const StyledSquare = styled.button`
+const PosedStyledSquare = styled(
+  posed.button({
+    firstState: { scale: 0.01 },
+    secondState: { scale: 1 }
+  })
+)`
   box-sizing: border-box;
   /* padding: 2rem 2rem; */
   width: 3rem;
@@ -23,7 +28,11 @@ const StyledSquare = styled.button`
 `;
 
 function Square(props) {
-  return <StyledSquare onClick={props.onClick}>{props.value}</StyledSquare>;
+  return (
+    <PosedStyledSquare pose={props.pose} onClick={props.onClick}>
+      {props.value}
+    </PosedStyledSquare>
+  );
 }
 
 export default Square;
