@@ -7,6 +7,7 @@ import styled from "styled-components";
 import Layout from "../styledComponents/Layout";
 import Logo from "../styledComponents/Logo";
 import posed from "react-pose";
+import Box from "../styledComponents/Box";
 
 const BoardWrapper = styled.div`
   width: 100vw;
@@ -47,10 +48,19 @@ class Board extends Component {
       xWon: 0,
       oWon: 0,
       status: "",
-      visibleAnimation: false
+      visibleAnimation: false,
+      pose: "top"
     };
   }
 
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({
+        pose: this.state.pose === "top" ? "bottom" : "top"
+      });
+    }, 1000);
+  }
+  componentDidUpdate() {}
   handleClick(value) {
     const squares = this.state.squares.slice(); //slice kopiuje tablice troche jak map.
     if (this.calculateWinner(squares) || squares[value]) {
@@ -96,9 +106,6 @@ class Board extends Component {
     });
   };
 
-  componentDidMount() {}
-  componentDidUpdate() {}
-
   render() {
     const winner = this.calculateWinner(this.state.squares);
 
@@ -131,7 +138,8 @@ class Board extends Component {
         >
           Mi PosedH1 header
         </PosedH1> */}
-        <Logo />
+        <Box pose={this.state.pose} />
+        {/* <Logo /> */}
         <Status status={this.state.status} />
         <BoardWrapper>
           <StyledBoard>{squareList}</StyledBoard>
