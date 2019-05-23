@@ -5,12 +5,14 @@ import PosedLogo from "../components/PosedLogo";
 import Status from "../components/Status";
 import styled from "styled-components";
 import Layout from "../components/Layout";
+import Scores from "../components/Scores";
 
 const BoardWrapper = styled.div`
   width: 100vw;
   background-color: ${({ theme }) => theme.colors.secondary};
   padding: 2rem 0;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-top: 2rem;
@@ -21,6 +23,7 @@ const StyledBoard = styled.div`
   grid-template-columns: 3rem 3rem 3rem;
   grid-template-rows: 3rem 3rem 3rem;
   grid-gap: 1rem;
+  margin-bottom: 1rem;
 `;
 
 class Board extends Component {
@@ -120,6 +123,7 @@ class Board extends Component {
         <Status status={this.state.status} />
         <BoardWrapper>
           <StyledBoard>{squareList}</StyledBoard>
+          <Scores xWon={this.state.xWon} oWon={this.state.oWon} />
         </BoardWrapper>
         <Button onClick={this.handlePlayAgain}>Play again</Button>
       </Layout>
