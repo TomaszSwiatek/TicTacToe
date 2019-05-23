@@ -1,15 +1,18 @@
 import posed from "react-pose";
 import styled from "styled-components";
+import img from "../assets/logo.svg";
 
 const Box = styled(
   posed.div({
-    top: { scale: 1, backgroundColor: "#f9415d", opacity: 1 },
-    bottom: { scale: 1.5, backgroundColor: "#fcab10", opacity: 0.5 }
+    top: { scale: 0.5, opacity: 0.2, rotate: 0 },
+    bottom: { scale: 1, opacity: 1, rotate: 7 }
   })
 )`
-  width: 30vw;
-  height: 30vh;
-  background-color: #f9415d;
+  width: ${({ isBigWidth }) => (isBigWidth ? "60%" : "40%")};
+  height: ${({ isBigHeight }) => (isBigHeight ? "50%" : "30%")};
+  background-image: url(${img});
+  background-repeat: no-repeat;
+  background-position: center center;
 `;
 
 // const Animation = () => {
