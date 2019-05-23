@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const StyledButton = styled.button`
+const Button = styled.button`
   text-decoration: none;
   color: ${({ theme }) => theme.colors.white};
   background: ${({ theme }) => theme.colors.secondary};
@@ -18,4 +18,4 @@ const StyledButton = styled.button`
   }
 `;
 
-export default StyledButton;
+export default Button;

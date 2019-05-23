@@ -1,12 +1,10 @@
 import React, { Component } from "react";
 import Square from "../components/Square";
-import StyledButton from "../styledComponents/StyledButton.js";
+import Button from "../components/Button";
+import PosedLogo from "../components/PosedLogo";
 import Status from "../components/Status";
 import styled from "styled-components";
-
-import Layout from "../styledComponents/Layout";
-import posed from "react-pose";
-import PosedLogo from "../styledComponents/PosedLogo";
+import Layout from "../components/Layout";
 
 const BoardWrapper = styled.div`
   width: 100vw;
@@ -123,7 +121,7 @@ class Board extends Component {
         <BoardWrapper>
           <StyledBoard>{squareList}</StyledBoard>
         </BoardWrapper>
-        <StyledButton onClick={this.handlePlayAgain}>Play again</StyledButton>
+        <Button onClick={this.handlePlayAgain}>Play again</Button>
       </Layout>
     );
   }
