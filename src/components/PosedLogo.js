@@ -8,13 +8,18 @@ const PosedLogo = styled(
     secondState: { scale: 1, opacity: 1, rotate: 7 }
   })
 )`
-  width: ${({ isBigWidth }) => (isBigWidth ? "60%" : "40%")};
-  height: ${({ isBigHeight }) => (isBigHeight ? "50%" : "30%")};
+  width: ${({ isBigWidth }) => (isBigWidth ? "20rem" : "35%")};
+  height: ${({ isBigHeight }) => (isBigHeight ? "20rem" : "25%")};
   background-image: url(${img});
   background-repeat: no-repeat;
   background-position: center center;
   background-size: contain;
   margin: 2rem;
+  ${({ theme }) => theme.media.desktop} {
+    width: ${({ isBigWidth }) => (isBigWidth ? "20rem" : "35%")};
+    height: ${({ isBigHeight }) => (isBigHeight ? "20rem" : "35%")};
+    margin: 1rem;
+  }
 `;
 
 export default PosedLogo;

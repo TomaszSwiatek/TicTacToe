@@ -13,7 +13,10 @@ html{
   font-family: 'Montserrat';
    }
       ${({ theme }) => theme.media.tablet} {
-font-size: 24px;
+font-size: 22px;
+  }
+     ${({ theme }) => theme.media.desktop} {
+font-size: 26px;
   }
 
 }

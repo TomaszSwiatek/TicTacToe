@@ -34,7 +34,7 @@ class Board extends Component {
       xIsNext: true,
       xWon: 0,
       oWon: 0,
-      status: "Next player: " + (this.xIsNext ? "X" : "O"),
+      status: "Starts player: " + (this.xIsNext ? "X" : "O"),
       pose: "firstState"
     };
   }

@@ -16,9 +16,6 @@ const Button = styled.button`
   :hover {
     box-shadow: 0 10px 20px -15px ${({ theme }) => theme.colors.white};
   }
-
-  ${({ theme }) => theme.media.tablet} {
-  }
 `;
 
 export default Button;
