@@ -8,16 +8,12 @@ export const theme = {
   font: {
     thin: 300,
     regular: 400,
-    bold: 700
+    bold: 900
   },
   media: {
-    //   mobile: '@media (min-width: 320px)',
-    tablet: "@media (min-width: 728px)",
-    desktop: "@media (min-width: 1024px)"
-    //   then in each components - best at the end we add media queries such a further: ${({theme}) => theme.media.desktop} {
-    //rules
-    // }
+    sm: "@media (min-width: 320px)",
+    md: "@media (min-width: 728px)",
+    lg: "@media (min-width: 1024px)",
+    xl: "@media (min-width: 1200px)"
   }
 };
-
-// export default theme;

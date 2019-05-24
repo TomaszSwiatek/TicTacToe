@@ -3,7 +3,7 @@ import React from "react";
 
 const ScoresWrapper = styled.div`
   display: flex;
-  width: 50%;
+  width: 40%;
   align-items: center;
   justify-content: space-evenly;
 `;

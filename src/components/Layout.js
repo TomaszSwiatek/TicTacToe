@@ -12,11 +12,17 @@ html{
   margin: 0;
   font-family: 'Montserrat';
    }
-      ${({ theme }) => theme.media.tablet} {
+      ${({ theme }) => theme.media.sm} {
+font-size: 16px;
+  }
+      ${({ theme }) => theme.media.md} {
 font-size: 22px;
   }
-     ${({ theme }) => theme.media.desktop} {
+     ${({ theme }) => theme.media.lg} {
 font-size: 26px;
+  }
+   ${({ theme }) => theme.media.xl} {
+font-size: 22px;
   }
 
 }

@@ -15,11 +15,6 @@ const PosedLogo = styled(
   background-position: center center;
   background-size: contain;
   margin: 2rem;
-  ${({ theme }) => theme.media.desktop} {
-    width: ${({ isBigWidth }) => (isBigWidth ? "20rem" : "35%")};
-    height: ${({ isBigHeight }) => (isBigHeight ? "20rem" : "35%")};
-    margin: 1rem;
-  }
 `;
 
 export default PosedLogo;
