@@ -14,6 +14,7 @@ const PosedLogo = styled(
   background-repeat: no-repeat;
   background-position: center center;
   background-size: contain;
+  margin: 2rem;
 `;
 
 export default PosedLogo;

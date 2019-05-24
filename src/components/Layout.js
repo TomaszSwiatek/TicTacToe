@@ -6,11 +6,19 @@ import { theme } from "../utils/theme";
 const GlobalStyle = createGlobalStyle`
  @import url('https://fonts.googleapis.com/css?family=Montserrat|Roboto');
 
- body{
+html{
+   body{
   padding: 0;
   margin: 0;
   font-family: 'Montserrat';
+   }
+      ${({ theme }) => theme.media.tablet} {
+font-size: 24px;
+  }
+
 }
+
+
 `;
 
 const StyledWrapper = styled.div`

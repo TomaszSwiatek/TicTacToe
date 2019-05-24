@@ -128,7 +128,6 @@ class Board extends Component {
     return (
       <Layout>
         <PosedLogo pose={this.state.pose} />
-        {/* <Logo /> */}
         <Status status={this.state.status} />
         <BoardWrapper>
           <StyledBoard>{squareList}</StyledBoard>
