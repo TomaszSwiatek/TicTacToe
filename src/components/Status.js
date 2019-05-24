@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import React from "react";
 const StyledStatus = styled.div`
-  /* width: 30%; */
   text-align: center;
   text-decoration: none;
   color: ${({ theme }) => theme.colors.white};
@@ -10,7 +9,7 @@ const StyledStatus = styled.div`
   padding: 0.5rem 2rem;
   border-radius: 5px;
   font-size: 1rem;
-  font-weight: 700;
+  font-weight: ${({ theme }) => theme.font.bitBold};
 `;
 
 const Status = props => {

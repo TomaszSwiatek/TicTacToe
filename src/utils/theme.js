@@ -7,7 +7,7 @@ export const theme = {
   },
   font: {
     thin: 300,
-    regular: 400,
+    bitBold: 700,
     bold: 900
   },
   media: {

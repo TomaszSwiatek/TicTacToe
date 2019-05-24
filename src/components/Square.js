@@ -17,7 +17,7 @@ const PosedStyledSquare = styled(
   background: ${({ theme }) => theme.colors.white};
   border: none;
   transition: background 0.4s ease;
-  font-weight: 900;
+  font-weight: ${({ theme }) => theme.font.bold};
   color: ${({ theme }) => theme.colors.neutral};
   font-size: 1.3em;
 

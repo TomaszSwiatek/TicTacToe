@@ -13,8 +13,7 @@ const StyledScores = styled.div`
   color: ${({ theme }) => theme.colors.white};
   border: 1px solid ${({ theme }) => theme.colors.white};
   border-radius: 5px;
-  /* margin-left: 1rem; */
-  font-weight: 900;
+  font-weight: ${({ theme }) => theme.font.bold};
 `;
 
 const Scores = props => {
