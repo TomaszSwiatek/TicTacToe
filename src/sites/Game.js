@@ -34,7 +34,7 @@ class Board extends Component {
       xIsNext: true,
       xWon: 0,
       oWon: 0,
-      status: "",
+      status: "Next player: " + (this.xIsNext ? "X" : "O"),
       pose: "firstState"
     };
   }
@@ -46,8 +46,9 @@ class Board extends Component {
       });
     }, 1000);
   }
+  getSnapshotBeforeUpdate() {}
   componentDidUpdate() {}
-  handleClick(value) {
+  handleClick = value => {
     const squares = this.state.squares.slice(); //slice kopiuje tablice troche jak map.
     if (this.calculateWinner(squares) || squares[value]) {
       return;
@@ -60,8 +61,22 @@ class Board extends Component {
       xIsNext: !this.state.xIsNext //if true the fill square with X
     });
 
-    //_______________________
-  }
+    const winner = this.calculateWinner(squares);
+
+    if (winner) {
+      winner === "X"
+        ? this.setState({ xWon: this.state.xWon++ })
+        : this.setState({ oWon: this.state.xWon++ });
+      this.setState({
+        status: (this.state.status = "Winner: " + winner)
+      });
+    } else {
+      this.setState({
+        status: (this.state.status =
+          "Next player: " + (this.state.xIsNext ? "X" : "O"))
+      });
+    }
+  };
 
   calculateWinner(squares) {
     const lines = [
@@ -93,15 +108,15 @@ class Board extends Component {
   };
 
   render() {
-    const winner = this.calculateWinner(this.state.squares);
+    // const winner = this.calculateWinner(this.state.squares);
 
-    if (winner) {
-      winner === "X" ? this.state.xWon++ : this.state.oWon++;
-      this.state.status = "Winner: " + winner;
-      console.log(this.state.xWon, this.state.oWon);
-    } else {
-      this.state.status = "Next player: " + (this.state.xIsNext ? "X" : "O");
-    }
+    // if (winner) {
+    //   winner === "X" ? this.state.xWon++ : this.state.oWon++;
+    //   this.state.status = "Winner: " + winner;
+    //   console.log(this.state.xWon, this.state.oWon);
+    // } else {
+    //   this.state.status = "Next player: " + (this.state.xIsNext ? "X" : "O");
+    // }
     // squares start
     const squares = this.state.squares;
     const squareList = squares.map((square, index) => (
