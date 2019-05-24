@@ -39,6 +39,7 @@ class Board extends Component {
     };
   }
 
+  //Animation - change state of pose prop after one second, and animate posed component's - Logo and Squares (check there animation properties).
   componentDidMount() {
     setTimeout(() => {
       this.setState({
@@ -46,9 +47,9 @@ class Board extends Component {
       });
     }, 1000);
   }
-
   handleClick = value => {
-    const squares = this.state.squares.slice(); //slice kopiuje tablice troche jak map.
+    // event handler on square's click. In sequence: do the copy of an squares'array, checks - is already someone won, then depends on xIsNext variable assign value x or o to square. At the end assign copied array to state, and change xIsNext value to turn the player out.
+    const squares = this.state.squares.slice();
     if (this.calculateWinner(squares) || squares[value]) {
       return;
     }
@@ -59,26 +60,25 @@ class Board extends Component {
       squares: squares,
       xIsNext: !this.state.xIsNext
     });
-
+    //This part update score after someone wins the game, and change the status of the game.
     const winner = this.calculateWinner(squares);
     let xWon = this.state.xWon;
     let oWon = this.state.oWon;
     let status = this.state.status;
-    const xIsNext = !this.state.xIsNext;
 
     if (winner) {
       winner === "X" ? xWon++ : oWon++;
-      status = "Winner: " + winner;
+      status = `Winner: ${winner}`;
       this.setState({ xWon: xWon, oWon: oWon, status: status });
     } else {
-      status = "Next player: " + (xIsNext ? "X" : "O");
+      status = `Next player: ${!this.state.xIsNext ? "X" : "O"}`;
       this.setState({
         status: status
       });
     }
   };
-
-  calculateWinner(squares) {
+  // method which count is anyone player wins? Method used in conditional statement in handleClick method.
+  calculateWinner = squares => {
     const lines = [
       [0, 1, 2],
       [3, 4, 5],
@@ -100,17 +100,17 @@ class Board extends Component {
       }
     }
     return null;
-  }
+  };
+  //event handler - method which cleans up squares and apply new status after click the button.
   handlePlayAgain = () => {
     let status = this.state.status;
-
     status = `Starts player: ${this.state.xIsNext ? "X" : "O"}`;
     this.setState({
       squares: Array(9).fill(null),
       status: status
     });
   };
-
+  //here we print out an matrix of squares. Styles base on grid css system. pose is prop to animate with popmotion library.
   render() {
     const squares = this.state.squares;
     const squareList = squares.map((square, index) => (
