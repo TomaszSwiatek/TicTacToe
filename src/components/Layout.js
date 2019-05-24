@@ -1,8 +1,9 @@
 import React from "react";
 import styled, { createGlobalStyle, ThemeProvider } from "styled-components";
-
 import { theme } from "../utils/theme";
 
+// Layout created mainly with flexbox. Styles use ThemeProvider to create one source of breakpoints, colors, font-weight.
+// Global App styles. Here are also added media queries to fix views on varius devices.
 const GlobalStyle = createGlobalStyle`
  @import url('https://fonts.googleapis.com/css?family=Montserrat|Roboto');
 
@@ -24,10 +25,7 @@ font-size: 26px;
    ${({ theme }) => theme.media.xl} {
 font-size: 22px;
   }
-
 }
-
-
 `;
 
 const StyledWrapper = styled.div`

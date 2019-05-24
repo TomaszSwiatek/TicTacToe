@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import posed from "react-pose";
 
+//Here are assigned properties to animation states. Popmotion library which i used itself sets the rest of the properties, such as the length of the animation or its type
 const PosedStyledSquare = styled(
   posed.button({
     firstState: { scale: 0.01 },
