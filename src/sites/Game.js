@@ -57,24 +57,23 @@ class Board extends Component {
 
     this.setState({
       squares: squares,
-      xIsNext: !this.state.xIsNext //if true the fill square with X
+      xIsNext: !this.state.xIsNext
     });
 
     const winner = this.calculateWinner(squares);
     let xWon = this.state.xWon;
     let oWon = this.state.oWon;
     let status = this.state.status;
+    const xIsNext = !this.state.xIsNext;
 
     if (winner) {
       winner === "X" ? xWon++ : oWon++;
-      this.setState({ xWon: xWon, oWon: oWon });
       status = "Winner: " + winner;
+      this.setState({ xWon: xWon, oWon: oWon, status: status });
+    } else {
+      status = "Next player: " + (xIsNext ? "X" : "O");
       this.setState({
         status: status
-      });
-    } else {
-      this.setState({
-        status: (status = "Next player: " + (this.state.xIsNext ? "X" : "O"))
       });
     }
   };
