@@ -46,8 +46,7 @@ class Board extends Component {
       });
     }, 1000);
   }
-  getSnapshotBeforeUpdate() {}
-  componentDidUpdate() {}
+
   handleClick = value => {
     const squares = this.state.squares.slice(); //slice kopiuje tablice troche jak map.
     if (this.calculateWinner(squares) || squares[value]) {
@@ -62,18 +61,20 @@ class Board extends Component {
     });
 
     const winner = this.calculateWinner(squares);
+    let xWon = this.state.xWon;
+    let oWon = this.state.oWon;
+    let status = this.state.status;
 
     if (winner) {
-      winner === "X"
-        ? this.setState({ xWon: this.state.xWon++ })
-        : this.setState({ oWon: this.state.xWon++ });
+      winner === "X" ? xWon++ : oWon++;
+      this.setState({ xWon: xWon, oWon: oWon });
+      status = "Winner: " + winner;
       this.setState({
-        status: (this.state.status = "Winner: " + winner)
+        status: status
       });
     } else {
       this.setState({
-        status: (this.state.status =
-          "Next player: " + (this.state.xIsNext ? "X" : "O"))
+        status: (status = "Next player: " + (this.state.xIsNext ? "X" : "O"))
       });
     }
   };
@@ -102,22 +103,16 @@ class Board extends Component {
     return null;
   }
   handlePlayAgain = () => {
+    let status = this.state.status;
+
+    status = `Starts player: ${this.state.xIsNext ? "X" : "O"}`;
     this.setState({
-      squares: Array(9).fill(null)
+      squares: Array(9).fill(null),
+      status: status
     });
   };
 
   render() {
-    // const winner = this.calculateWinner(this.state.squares);
-
-    // if (winner) {
-    //   winner === "X" ? this.state.xWon++ : this.state.oWon++;
-    //   this.state.status = "Winner: " + winner;
-    //   console.log(this.state.xWon, this.state.oWon);
-    // } else {
-    //   this.state.status = "Next player: " + (this.state.xIsNext ? "X" : "O");
-    // }
-    // squares start
     const squares = this.state.squares;
     const squareList = squares.map((square, index) => (
       <Square
@@ -129,7 +124,6 @@ class Board extends Component {
         }}
       />
     ));
-    // squares end
 
     return (
       <Layout>
